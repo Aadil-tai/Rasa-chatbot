@@ -1,0 +1,48 @@
+version: "3.1"
+
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - provide_email
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! If you have any more questions, feel free to ask."
+
+  utter_ask_email:
+    - text: "Please provide your email address."
+
+  utter_acknowledge_email:
+    - text: "Got it! I've stored your email address as {email}."
+
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_email
+  - action_set_email
+
+  # Include your custom action for sending emails here:
+  - action_email

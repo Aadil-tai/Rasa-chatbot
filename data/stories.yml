@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+- story: User wants to send an email
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_email
+    entities:
+    - email: "aadiltaitech@gmail.com"
+  - action: action_set_email
+  - action: utter_acknowledge_email
+  - intent: provide_email
+    entities:
+    - email: "aadiltai3884@gmail.com"
+  - action: action_set_email
+  - action: utter_acknowledge_email
+  - intent: goodbye
+  - action: utter_goodbye
